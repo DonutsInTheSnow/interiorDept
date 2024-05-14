@@ -1,5 +1,3 @@
-/* global d3 */
-
 const projectName = 'bar-fun';
 
 var width = 800,
@@ -24,7 +22,6 @@ var svgContainer = d3
   .attr('width', width + 100)
   .attr('height', height + 60);
 
-
 d3.json(
   'https://gist.githubusercontent.com/DonutsInTheSnow/20a4d9c97459b576b6d238ae1aa7ff9c/raw/7302de9802cab951bb65e26b544956741844921d/doi.json'
 )
@@ -43,9 +40,6 @@ d3.json(
       .text('Cabinet level agencies')
       .attr('class', 'info');
 
-
-    console.log(`agency 1: ${data.agencies.agency[1].abbr}`);
-
     var agencies = data.agencies.agency;
 
     let empNums = [];
@@ -54,14 +48,10 @@ d3.json(
         empNums.push(agency.employment);
     });
 
-    // console.log(`empNums here: ${empNums}`);
-
 
     let abbr = agencies.map(function(agency) {
       return agency.abbr;
     });
-
-    // console.log(abbr);
 
 
     // Create xScale using scaleBand for agency subelements
